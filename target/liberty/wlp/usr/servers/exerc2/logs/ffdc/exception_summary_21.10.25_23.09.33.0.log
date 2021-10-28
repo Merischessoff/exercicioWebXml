@@ -1,0 +1,12 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1 25/10/2021 23:09:33:282 BRT 25/10/2021 23:09:33:282 BRT java.security.PrivilegedActionException com.ibm.ws.jaxws.client.injection.ServiceRefObjectFactory 474
+                                                                            - /home/meridiane/Documentos/Dados/vscode/exerc2/target/liberty/wlp/usr/servers/exerc2/logs/ffdc/ffdc_21.10.25_23.09.33.0.log
+     1      1 25/10/2021 23:09:33:296 BRT 25/10/2021 23:09:33:296 BRT java.lang.reflect.InvocationTargetException com.ibm.wsspi.injectionengine.InjectionBinding.getInjectionObject 408
+                                                                            - /home/meridiane/Documentos/Dados/vscode/exerc2/target/liberty/wlp/usr/servers/exerc2/logs/ffdc/ffdc_21.10.25_23.09.33.1.log
+     2      1 25/10/2021 23:09:33:301 BRT 25/10/2021 23:09:33:301 BRT com.ibm.wsspi.injectionengine.InjectionException com.ibm.ws.webcontainer.servlet.ServletWrapper.loadServlet 228
+                                                                            - /home/meridiane/Documentos/Dados/vscode/exerc2/target/liberty/wlp/usr/servers/exerc2/logs/ffdc/ffdc_21.10.25_23.09.33.2.log
+     3      1 25/10/2021 23:09:33:360 BRT 25/10/2021 23:09:33:360 BRT javax.servlet.UnavailableException com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest() 302
+                                                                            - /home/meridiane/Documentos/Dados/vscode/exerc2/target/liberty/wlp/usr/servers/exerc2/logs/ffdc/ffdc_21.10.25_23.09.33.3.log
+------+------+---------------------------+---------------------------+---------------------------

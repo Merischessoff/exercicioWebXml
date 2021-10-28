@@ -1,0 +1,2 @@
+meridiane@meridiane-Lenovo-ideapad-330S-14IKB:~/Documentos/Dados/vscode/exerc2/target/liberty/wlp/bin/jaxws$ ./wsimport -target 2.2 -d /home/meridiane/Downloads -keep "http://localhost:9080/Big?wsdl"
+

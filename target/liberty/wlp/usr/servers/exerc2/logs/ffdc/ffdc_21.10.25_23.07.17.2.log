@@ -1,0 +1,515 @@
+------Start of DE processing------ = [25/10/2021 23:07:17:132 BRT]
+Exception = com.ibm.wsspi.injectionengine.InjectionException
+Source = com.ibm.ws.webcontainer.servlet.ServletWrapper.loadServlet
+probeid = 228
+Stack Dump = com.ibm.wsspi.injectionengine.InjectionException: com.ibm.wsspi.injectionengine.InjectionException: CWNEN0030E: A fábrica java:comp/env/webservicexml.exerc2.Ui/service encontrou um problema ao obter o objeto de ligação java.lang.reflect.InvocationTargetException da instância de objeto.  A mensagem de exceção foi: {2}
+	at com.ibm.ws.webcontainer.osgi.webapp.WebApp.inject(WebApp.java:1281)
+	at com.ibm.ws.webcontainer.osgi.webapp.WebApp.injectAndPostConstruct(WebApp.java:1417)
+	at com.ibm.ws.webcontainer.osgi.webapp.WebApp.injectAndPostConstruct(WebApp.java:1405)
+	at com.ibm.ws.webcontainer.osgi.servlet.ServletWrapper.createTarget(ServletWrapper.java:63)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper$1.run(ServletWrapper.java:1543)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.loadServlet(ServletWrapper.java:1511)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:590)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:443)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1227)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:5049)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1007)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1159)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:428)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:387)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:566)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:500)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:360)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.ready(HttpInboundLink.java:327)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:167)
+	at com.ibm.ws.tcpchannel.internal.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:75)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:504)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:574)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:958)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1047)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:238)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: com.ibm.wsspi.injectionengine.InjectionException: CWNEN0030E: A fábrica java:comp/env/webservicexml.exerc2.Ui/service encontrou um problema ao obter o objeto de ligação java.lang.reflect.InvocationTargetException da instância de objeto.  A mensagem de exceção foi: {2}
+	at com.ibm.wsspi.injectionengine.InjectionBinding.getInjectionObject(InjectionBinding.java:1454)
+	at com.ibm.wsspi.injectionengine.InjectionBinding.getInjectableObject(InjectionBinding.java:1368)
+	at com.ibm.wsspi.injectionengine.InjectionTarget.inject(InjectionTarget.java:104)
+	at com.ibm.ws.managedobject.internal.ManagedObjectImpl.inject(ManagedObjectImpl.java:96)
+	at com.ibm.ws.managedobject.internal.ManagedObjectImpl.inject(ManagedObjectImpl.java:87)
+	at com.ibm.ws.webcontainer.osgi.webapp.WebApp.inject(WebApp.java:1276)
+	... 30 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedConstructorAccessor753.newInstance(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.ibm.ws.jaxws.client.injection.ServiceRefObjectFactory$4.run(ServiceRefObjectFactory.java:471)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.jaxws.client.injection.ServiceRefObjectFactory.getServiceInstance(ServiceRefObjectFactory.java:467)
+	at com.ibm.ws.jaxws.client.injection.ServiceRefObjectFactory.getInstance(ServiceRefObjectFactory.java:307)
+	at com.ibm.ws.jaxws.client.injection.ServiceRefObjectFactory.getObjectInstance(ServiceRefObjectFactory.java:279)
+	at com.ibm.wsspi.injectionengine.InjectionBinding.getInjectionObjectInstance(InjectionBinding.java:1552)
+	at com.ibm.wsspi.injectionengine.InjectionBinding.getInjectionObject(InjectionBinding.java:1428)
+	... 35 more
+Caused by: javax.xml.ws.WebServiceException: Could not find service named {http://exerc2.webServiceXml/}Big in wsdl http://localhost:9080/Big?wsdl
+	at org.apache.cxf.jaxws.ServiceImpl.initializePorts(ServiceImpl.java:160)
+	at org.apache.cxf.jaxws.ServiceImpl.<init>(ServiceImpl.java:148)
+	at com.ibm.ws.jaxws.client.LibertyServiceImpl.<init>(LibertyServiceImpl.java:88)
+	at com.ibm.ws.jaxws.client.LibertyProviderImpl$1.run(LibertyProviderImpl.java:91)
+	at com.ibm.ws.jaxws.client.LibertyProviderImpl$1.run(LibertyProviderImpl.java:88)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.jaxws.client.LibertyProviderImpl.createServiceDelegate(LibertyProviderImpl.java:88)
+	at javax.xml.ws.Service.<init>(Service.java:57)
+	at webservicexml.exerc2.Big_Service.<init>(Big_Service.java:58)
+	... 44 more
+
+Dump of callerThis
+Object type = com.ibm.ws.webcontainer.servlet.ServletWrapper$1
+  val$className = "webservicexml.exerc2.Ui"
+  val$servletClass = null
+  val$loader = class com.ibm.ws.classloading.internal.ThreadContextClassLoader@1d710327
+    tc = class com.ibm.websphere.ras.TraceComponent@3b4b52d8
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.internal.ThreadContextClassLoader,class com.ibm.ws.classloading.internal.ThreadContextClassLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    bundle = class java.util.concurrent.atomic.AtomicReference@192d40b1
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+    key = "WebModule:exerc2#exerc2.war"
+    refCount = class java.util.concurrent.atomic.AtomicInteger@3c129b19
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      U = "/* Could not access U */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    appLoader = class com.ibm.ws.classloading.internal.AppClassLoader@34535583
+      tc = class com.ibm.websphere.ras.TraceComponent@15fe2410
+      disableSharedClassesCache = false
+      PARENT_FIRST_SEARCH_ORDER = class java.util.Collections$UnmodifiableRandomAccessList@6e8d5028
+      packagesDefined = class java.util.Collections$SetFromMap@6985e9ca
+      CLASS_LOADING_TRACE_PREFIX = "com.ibm.ws.class.load."
+      DEFAULT_PACKAGE = "default.package"
+      perPackageClassLoadingTraceComponents = class java.util.concurrent.ConcurrentHashMap@1849d36e
+      config = class com.ibm.ws.classloading.internal.ClassLoaderConfigurationImpl@7f527364
+      privateLibraries = null
+      delegateLoaders = class com.ibm.ws.classloading.internal.util.CompositeIterable@7b5a70b6
+      nativeLibraryFiles = class java.util.ArrayList@3d571dae
+      transformers = class java.util.ArrayList@6b536bc9
+      apiAccess = class com.ibm.ws.classloading.internal.GatewayClassLoader@47bdce2c
+      generator = class com.ibm.ws.classloading.internal.ClassGeneratorManager@6e99a35a
+      protectionDomains = class java.util.concurrent.ConcurrentHashMap@7f6ec94
+      parent = class com.ibm.ws.classloading.internal.GatewayClassLoader@47bdce2c
+      hook = null
+      serialVersionUID = 8734164900246230615
+      tc = class com.ibm.websphere.ras.TraceComponent@57b7951e
+      smartClassPath = class com.ibm.ws.classloading.internal.ContainerClassLoader$SmartClassPathImpl@2f01e31c
+      nativeLibraryContainers = class java.util.ArrayList@2a3e213f
+      redefiner = class com.ibm.ws.classloading.internal.util.ClassRedefiner@7c640b4d
+      jarProtocol = "wsjar:"
+      mapCreationQueue = class java.util.concurrent.Executors$FinalizableDelegatedExecutorService@5a430a92
+      serialVersionUID = 6399598832433768509
+      serialVersionUID = 1837293532091806117
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7b72ce3b
+      serialVersionUID = -4586727107834513475
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7b12ca3b
+      serialVersionUID = -7709588811276454856
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5ca6413b
+      initialized = "/* Could not access initialized */"
+      pdcache = "/* Could not access pdcache */"
+      parent = "/* Could not access parent */"
+      name = "/* Could not access name */"
+      unnamedModule = "/* Could not access unnamedModule */"
+      nameAndId = "/* Could not access nameAndId */"
+      parallelLockMap = "/* Could not access parallelLockMap */"
+      package2certs = "/* Could not access package2certs */"
+      nocerts = "/* Could not access nocerts */"
+      classes = "/* Could not access classes */"
+      defaultDomain = "/* Could not access defaultDomain */"
+      packages = "/* Could not access packages */"
+      scl = "/* Could not access scl */"
+      usr_paths = "/* Could not access usr_paths */"
+      sys_paths = "/* Could not access sys_paths */"
+      loadedLibraryNames = "/* Could not access loadedLibraryNames */"
+      systemNativeLibraries = "/* Could not access systemNativeLibraries */"
+      nativeLibraries = "/* Could not access nativeLibraries */"
+      assertionLock = "/* Could not access assertionLock */"
+      defaultAssertionStatus = "/* Could not access defaultAssertionStatus */"
+      packageAssertionStatus = "/* Could not access packageAssertionStatus */"
+      classAssertionStatus = "/* Could not access classAssertionStatus */"
+      classLoaderValueMap = "/* Could not access classLoaderValueMap */"
+      $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+    clSvc = class com.ibm.ws.classloading.internal.ClassLoadingServiceImpl@28d032d4
+      tc = class com.ibm.websphere.ras.TraceComponent@6806bab2
+      leakDetectionMap = class java.util.HashMap@70e4a63f
+      appClassLoaders = class java.util.Collections$SetFromMap@bdc811e
+      TCCL_LOCK_WAIT = 15000
+      REFERENCE_GENERATORS = "generators"
+      bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@4755bfb6
+      aclStore = class com.ibm.ws.classloading.internal.util.CanonicalStore@278bbb8e
+      tcclStore = class com.ibm.ws.classloading.internal.util.CanonicalStore@3cf2b37f
+      tcclStoreLock = class java.util.concurrent.locks.ReentrantLock@69722f80
+      digraph = class org.eclipse.equinox.internal.region.StandardRegionDigraph@64997c1
+      redefiner = class com.ibm.ws.classloading.internal.util.ClassRedefiner@7c640b4d
+      listener = class com.ibm.ws.classloading.internal.ClassLoadingServiceImpl$1@552426f5
+      classloaders = class java.util.Collections$SynchronizedMap@2d520dfe
+      resourceProviders = class com.ibm.ws.classloading.internal.CompositeResourceProvider@67ef600a
+      rememberedBundles = class java.util.concurrent.ConcurrentHashMap@3b8d31d9
+      collectedBundles = class java.lang.ref.ReferenceQueue@4feaabd3
+      generatorRefs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSet@726a622d
+      generatorManager = class com.ibm.ws.classloading.internal.ClassGeneratorManager@6e99a35a
+      appExtLibs = class java.util.concurrent.CopyOnWriteArrayList@3cc844a9
+      globalConfig = class com.ibm.ws.classloading.configuration.GlobalClassloadingConfiguration@2666d4d0
+      metaInfServicesProviders = class java.util.concurrent.ConcurrentHashMap@7bcb13b
+      metaInfServicesRefs = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceMap@241c41e5
+      protectionDomainMap = class java.util.HashMap@5a0fa4c3
+      metadataIdentifierService = class com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl@4a5f2b06
+      globalSharedLibrary = class java.util.concurrent.atomic.AtomicReference@28887e1f
+      serialVersionUID = 4365026902615131286
+    serialVersionUID = 846416563800781557
+    tc = class com.ibm.websphere.ras.TraceComponent@198c6939
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.internal.UnifiedClassLoader,class com.ibm.ws.classloading.internal.UnifiedClassLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    followOnClassLoaders = class java.util.ArrayList@2e68a50f
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      DEFAULT_CAPACITY = "/* Could not access DEFAULT_CAPACITY */"
+      EMPTY_ELEMENTDATA = "/* Could not access EMPTY_ELEMENTDATA */"
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = "/* Could not access DEFAULTCAPACITY_EMPTY_ELEMENTDATA */"
+      elementData = "/* Could not access elementData */"
+      size = "/* Could not access size */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+      modCount = "/* Could not access modCount */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+    serialVersionUID = 8829649920524275888
+    serialVersionUID = -4586727107834513475
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7b12ca3b
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.internal.LibertyLoader,class com.ibm.ws.classloading.internal.LibertyLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    serialVersionUID = -7709588811276454856
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5ca6413b
+      strings[0] = "TraceComponent[com.ibm.ws.classloading.LibertyClassLoader,class com.ibm.ws.classloading.LibertyClassLoader,[ClassLoadingService],com.ibm.ws.classloading.internal.resources.ClassLoadingServiceMessages,null]"
+    initialized = "/* Could not access initialized */"
+    pdcache = "/* Could not access pdcache */"
+    parent = "/* Could not access parent */"
+    name = "/* Could not access name */"
+    unnamedModule = "/* Could not access unnamedModule */"
+    nameAndId = "/* Could not access nameAndId */"
+    parallelLockMap = "/* Could not access parallelLockMap */"
+    package2certs = "/* Could not access package2certs */"
+    nocerts = "/* Could not access nocerts */"
+    classes = "/* Could not access classes */"
+    defaultDomain = "/* Could not access defaultDomain */"
+    packages = "/* Could not access packages */"
+    scl = "/* Could not access scl */"
+    usr_paths = "/* Could not access usr_paths */"
+    sys_paths = "/* Could not access sys_paths */"
+    loadedLibraryNames = "/* Could not access loadedLibraryNames */"
+    systemNativeLibraries = "/* Could not access systemNativeLibraries */"
+    nativeLibraries = "/* Could not access nativeLibraries */"
+    assertionLock = "/* Could not access assertionLock */"
+    defaultAssertionStatus = "/* Could not access defaultAssertionStatus */"
+    packageAssertionStatus = "/* Could not access packageAssertionStatus */"
+    classAssertionStatus = "/* Could not access classAssertionStatus */"
+    classLoaderValueMap = "/* Could not access classLoaderValueMap */"
+    $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+  val$servletName = "webservicexml.exerc2.Ui"
+  this$0 = class com.ibm.ws.webcontainer.osgi.servlet.ServletWrapper@4f232327
+    serialVersionUID = 1
+    _mo = null
+    serialVersionUID = -4479626085298397598
+    notifyInvocationListeners = false
+    UNINITIALIZED_STATE = -1
+    AVAILABLE_STATE = 0
+    UNAVAILABLE_STATE = 1
+    UNAVAILABLE_PERMANENTLY_STATE = 2
+    collabHelper = class com.ibm.ws.webcontainer.osgi.collaborator.CollaboratorHelperImpl@75d5238a
+      webAppInvCollabs = class java.util.Collections$UnmodifiableSet@d0c734b
+      securityDomainForApp = null
+      logger = class com.ibm.ws.logging.internal.WsLogger@3c577b08
+      staticDefaultSecurityCollaborator = class com.ibm.ws.webcontainer.collaborator.WebAppSecurityCollaborator@3c8856bc
+      logger = class com.ibm.ws.logging.internal.WsLogger@26ae3088
+      CLASS_NAME = "com.ibm.wsspi.webcontainer.collaborator.CollaboratorHelper"
+      webApp = class com.ibm.ws.webcontainer40.osgi.webapp.WebApp40@63b049e3
+      securityCollaborator = class com.ibm.ws.webcontainer.collaborator.WebAppSecurityCollaborator@3c8856bc
+      nameSpaceCollaborator = class com.ibm.ws.webcontainer.osgi.collaborator.WebAppNameSpaceCollaboratorImpl@3aea1362
+      transactionCollaborator = class com.ibm.ws.webcontainer.collaborator.WebAppTransactionCollaborator@49a5f1a9
+      connectionCollaborator = class com.ibm.ws.webcontainer.collaborator.ConnectionHandleCollaborator@73645027
+      allCollabEnum = class java.util.RegularEnumSet@cace811
+      servlet_23_or_greater = true
+      DEFER_SERVLET_REQUEST_LISTENER_DESTROY_ON_ERROR = false
+    nServicing = class java.util.concurrent.atomic.AtomicInteger@20d1119a
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      U = "/* Could not access U */"
+      VALUE = "/* Could not access VALUE */"
+      value = "/* Could not access value */"
+      serialVersionUID = "/* Could not access serialVersionUID */"
+    lastAccessTime = 1635214026771
+    state = -1
+    logger = class com.ibm.ws.logging.internal.WsLogger@591a1664
+      ivCachedResourceBundleName = "com.ibm.ws.webcontainer.resources.Messages"
+      ivCachedResourceBundle = class com.ibm.ws.webcontainer.resources.Messages_pt_BR@487f2947
+      ivComponent = null
+      ivOrganization = null
+      ivProduct = null
+      ivMinimumLocalizationLevelIntValue = 625
+      ivTC = class com.ibm.websphere.ras.TraceComponent@64e64d27
+      loggerRegistrationComponent = class java.lang.ThreadLocal@2530de8
+      emptyHandlers = "/* Could not access emptyHandlers */"
+      offValue = "/* Could not access offValue */"
+      SYSTEM_LOGGER_RB_NAME = "/* Could not access SYSTEM_LOGGER_RB_NAME */"
+      SYSTEM_BUNDLE = "/* Could not access SYSTEM_BUNDLE */"
+      NO_RESOURCE_BUNDLE = "/* Could not access NO_RESOURCE_BUNDLE */"
+      config = "/* Could not access config */"
+      manager = "/* Could not access manager */"
+      name = "/* Could not access name */"
+      loggerBundle = "/* Could not access loggerBundle */"
+      anonymous = "/* Could not access anonymous */"
+      catalog = "/* Could not access catalog */"
+      catalogName = "/* Could not access catalogName */"
+      catalogLocale = "/* Could not access catalogLocale */"
+      treeLock = "/* Could not access treeLock */"
+      parent = "/* Could not access parent */"
+      kids = "/* Could not access kids */"
+      callerModuleRef = "/* Could not access callerModuleRef */"
+      isSystemLogger = "/* Could not access isSystemLogger */"
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@470da4a8
+    CLASS_NAME = "com.ibm.ws.webcontainer.servlet.ServletWrapper"
+    nls = class com.ibm.ejs.ras.TraceNLS@716f811c
+      resolver = class com.ibm.ws.logging.internal.TraceNLSResolver@6ae1df02
+      finder = null
+      ivBundleName = "com.ibm.ws.webcontainer.resources.Messages"
+      caller = class java.lang.Class@4f80714d
+    servletConfig = class com.ibm.ws.webcontainer.servlet.ServletConfig@4636a14f
+      logger = class com.ibm.ws.logging.internal.WsLogger@591a1664
+      CLASS_NAME = "com.ibm.ws.webcontainer.servlet.ServletConfig"
+      nls = class com.ibm.ejs.ras.TraceNLS@176d80dc
+      liberty_nls = class com.ibm.ejs.ras.TraceNLS@267d936b
+      enabled = true
+      servletName = "webservicexml.exerc2.Ui"
+      className = "webservicexml.exerc2.Ui"
+      mappings = class java.util.ArrayList@168a6228
+      startUpWeight = -1
+      DEFAULT_STARTUP = -1
+      isCachingEnabled = true
+      isStatisticsEnabled = true
+      isInternal = false
+      metaData = class com.ibm.ws.webcontainer.osgi.metadata.WebComponentMetaDataImpl@336f2496
+      singleThreadModelServlet = false
+      isJsp = false
+      webAppConfig = class com.ibm.ws.webcontainer.osgi.webapp.WebAppConfiguration@16364f1
+      servletWrapper = class com.ibm.ws.webcontainer.osgi.servlet.ServletWrapper@4f232327
+      servletClass = null
+      servlet = null
+      addedToLoadOnStartup = true
+      previousWeight = null
+      multipartConfig = null
+      multipartConfigBaseLocation = null
+      runAsRole = null
+      servletSecurityElement = null
+      declareRolesAnnotation = null
+      logger = class com.ibm.ws.logging.internal.WsLogger@591a1664
+      CLASS_NAME = "com.ibm.ws.webcontainer.servlet.TargetConfig"
+      initParams = null
+      fileName = null
+      displayName = null
+      name = "webservicexml.exerc2.Ui"
+      description = null
+      smallIcon = null
+      largeIcon = null
+      context = class com.ibm.ws.webcontainer40.facade.ServletContextFacade40@26a806c5
+      className = null
+      asyncSupported = false
+      _id = "ServletGeneratedId1"
+      _attributes = null
+      serialVersionUID = 7511545662945734886
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@57c95442
+    context = class com.ibm.ws.webcontainer40.osgi.webapp.WebApp40@63b049e3
+      tc = class com.ibm.websphere.ras.TraceComponent@2c788489
+      servlet40NLS = class com.ibm.ejs.ras.TraceNLS@4a58c841
+      CLASS_NAME = "com.ibm.ws.webcontainer40.osgi.webapp.WebApp40"
+      defaultSessionTimeout = 30
+      tc = class com.ibm.websphere.ras.TraceComponent@1bf94957
+      CLASS_NAME = "com.ibm.ws.webcontainer31.osgi.webapp.WebApp31"
+      servlet31NLS = class com.ibm.ejs.ras.TraceNLS@379c6c63
+      validListenerClasses = class java.lang.Class[7]
+      wsocServHandler = null
+      tc = class com.ibm.websphere.ras.TraceComponent@35b3d179
+      CLASS_NAME = "com.ibm.ws.webcontainer.osgi.webapp.WebApp"
+      metaDataService = class com.ibm.ws.container.service.metadata.internal.MetaDataServiceImpl@4a5f2b06
+      namespacePopulated = false
+      referenceContext = class com.ibm.ws.injectionengine.osgi.internal.OSGiReferenceContextImpl@6d9eb6f4
+      j2eeNameFactory = class com.ibm.ws.container.service.metadata.internal.J2EENameFactoryImpl@5548f54f
+      moduleLoader = class com.ibm.ws.classloading.internal.AppClassLoader@34535583
+      webAppConfig = class com.ibm.ws.webcontainer.osgi.webapp.WebAppConfiguration@16364f1
+      extensionProcessingDisabled = false
+      managedObjectService = class com.ibm.ws.managedobject.internal.ManagedObjectServiceImpl@6f0756f4
+      internalServletMetaData = interface com.ibm.wsspi.webcontainer.metadata.WebComponentMetaData[2]
+      loginProcessor = null
+      logoutProcessor = null
+      collabHelper = class com.ibm.ws.webcontainer.osgi.collaborator.CollaboratorHelperImpl@75d5238a
+      envObject = class com.ibm.ws.util.WSThreadLocal@25d3fe93
+      orderedLibPaths = class java.util.Collections$UnmodifiableRandomAccessList@42a7cbf6
+      perm = class com.ibm.websphere.security.WebSphereRuntimePermission@5a98dc5d
+      WELCOME_FILE_LIST = "com.ibm.ws.webcontainer.config.WelcomeFileList"
+      DIR_BROWSING_MAPPING = "__dirBrowsing__1635214024070"
+      FILTER_PROXY_MAPPING = "/__filterProxy__1635214024070"
+      logger = class com.ibm.ws.logging.internal.WsLogger@1cb544a6
+      CLASS_NAME = "com.ibm.ws.webcontainer.webapp.WebApp"
+      loader = class com.ibm.ws.classloading.internal.ThreadContextClassLoader@1d710327
+      facade = class com.ibm.ws.webcontainer40.facade.ServletContextFacade40@26a806c5
+      features = class java.util.ArrayList@5a2c819d
+      applicationName = "exerc2"
+      config = class com.ibm.ws.webcontainer.osgi.webapp.WebAppConfiguration@16364f1
+      securityEnabledForApp = false
+      webExtensionProcessor = class com.ibm.ws.webcontainer.osgi.extension.WebExtensionProcessor@464ac4b1
+      production = true
+      isServlet23 = true
+      contextPath = "/"
+      internalServletList = class [Ljava.lang.String;[2]
+      BY_NAME_ONLY = "/_1635214026742_/"
+      filterManager = class com.ibm.ws.webcontainer.osgi.filter.WebAppFilterManagerImpl@1694864c
+      documentRoot = null
+      SERVLET_API_VERSION = "Servlet 2.5"
+      disableServletAuditLogging = -1
+      serverInfo = "IBM WebSphere Liberty/21.0.0.10"
+      sessionCtx = class com.ibm.ws.webcontainer31.session.impl.HttpSessionContext31Impl@288add6a
+      eventSource = class com.ibm.ws.webcontainer.webapp.WebAppEventSource@3ea09b69
+      nls = class com.ibm.ejs.ras.TraceNLS@38f5eb86
+      liberty_nls = class com.ibm.ejs.ras.TraceNLS@294dad4a
+      error_nls = class com.ibm.ejs.ras.TraceNLS@1bd9e8c9
+      sessionListeners = class java.util.ArrayList@65460755
+      sessionIdListeners = class java.util.ArrayList@72f869a0
+      sessionAttrListeners = class java.util.ArrayList@369bad48
+      addedSessionListeners = class java.util.ArrayList@62d084f2
+      addedSessionAttrListeners = class java.util.ArrayList@37795b52
+      servletContextListeners = class java.util.ArrayList@6fd9174
+      servletContextLAttrListeners = class java.util.ArrayList@6d679d0e
+      servletRequestListeners = class java.util.ArrayList@b766344
+      servletRequestLAttrListeners = class java.util.ArrayList@76a80ab3
+      prependSlashToResource = false
+      destroyed = false
+      webAppNameSpaceCollab = class com.ibm.ws.webcontainer.osgi.collaborator.WebAppNameSpaceCollaboratorImpl@3aea1362
+      txCollab = class com.ibm.ws.webcontainer.collaborator.WebAppTransactionCollaborator@49a5f1a9
+      sessionActivationListeners = class java.util.ArrayList@1cb44323
+      sessionBindingListeners = class java.util.ArrayList@4dea2256
+      scratchdir = null
+      jspClassLoaderLimit = 0
+      jspClassLoaderExclusionList = null
+      jspClassLoadersMap = null
+      jspClassLoaderLimitTrackIF = false
+      defaultExtProc = null
+      directoryBrowsingServlet = null
+      cdiContexts = class java.util.concurrent.ConcurrentHashMap@43f5756a
+      moduleConfig = class com.ibm.ws.webcontainer.osgi.container.DeployedModule@7de68b6c
+      extensionFactories = class java.util.ArrayList@6182fe14
+      initialized = true
+      lock = class com.ibm.ws.webcontainer.webapp.WebApp$1@649e1fbc
+      afterServletContextCreated = false
+      redirectContextRoot = false
+      errorExceptionTypeFirst = false
+      initFilterBeforeServletInit = false
+      SET_400_SC_ON_TOO_MANY_PARENT_DIRS = false
+      sortedServletConfigs = class java.util.ArrayList@c287860
+      effectiveMajorVersion = 3
+      effectiveMinorVersion = 0
+      canAddServletContextListener = true
+      withinContextInitOfProgAddListener = false
+      lastProgAddListenerInitialized = null
+      webInfLibClassloader = null
+      metaInfCache = class com.ibm.ws.webcontainer.webapp.WebApp$2@455c2f62
+      useMetaInfCache = true
+      SUN_CONFIGURE_LISTENER_CLASSNAME = "com.sun.faces.config.ConfigureListener"
+      MYFACES_LIFECYCLE_LISTENER_CLASSNAME = "org.apache.myfaces.webapp.StartupServletContextListener"
+      JSF_IMPL_ENABLED_PARAM = "com.ibm.ws.jsf.JSF_IMPL_ENABLED"
+      JSF_IMPL_ENABLED_CUSTOM = "Custom"
+      JSF_IMPL_ENABLED_NONE = "None"
+      staticDocRoot = class com.ibm.ws.webcontainer.util.DocumentRootUtils@33581b83
+      jspDocRoot = class com.ibm.ws.webcontainer.util.DocumentRootUtils@272f91ab
+      container = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@6efb2f32
+      metaInfResourceFinder = class com.ibm.ws.webcontainer.util.MetaInfResourceFinder@688b1656
+      postConstructMethods = class com.ibm.ws.webcontainer.webapp.WebApp$AnnotatedMethods@4c88131a
+      preDestroyMethods = class com.ibm.ws.webcontainer.webapp.WebApp$AnnotatedMethods@3f7f8d0b
+      OBJ_EMPTY = class java.lang.Object[0]
+      CLASS_EMPTY = class java.lang.Class[0]
+      DEFAULT_JSP_EXTENSIONS = class java.util.ArrayList@6406f186
+      DEFER_SERVLET_REQUEST_LISTENER_DESTROY_ON_ERROR = false
+      DO_ACCEPT_PARTIAL = true
+      DO_NOT_ACCEPT_PARTIAL = false
+      DO_ACCEPT_EXCLUDED = true
+      DO_NOT_ACCEPT_EXCLUDED = false
+      commands = class java.util.ArrayList@548f62f6
+      requestMapper = class com.ibm.wsspi.webcontainer.util.URIMapper@5813abbe
+      parent = class com.ibm.ws.webcontainer.osgi.webapp.WebGroup@1b476262
+      name = "exerc2"
+      isAlive = true
+      subElements = null
+      attributes = class java.util.concurrent.ConcurrentHashMap@489e2a4d
+      config = null
+      serialVersionUID = -8271459000149267764
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@daef5b9
+    target = null
+    cacheWrappers = null
+    targetLoader = class com.ibm.ws.classloading.internal.ThreadContextClassLoader@1d710327
+    evtSource = class com.ibm.ws.webcontainer.webapp.WebAppEventSource@3ea09b69
+      _invocationListeners = class com.ibm.ws.webcontainer.util.EventListeners@49d38936
+      _servletListeners = class com.ibm.ws.webcontainer.util.EventListeners@7a678c11
+      _errorListeners = class com.ibm.ws.webcontainer.util.EventListeners@11f47dc4
+      _applicationListeners = class com.ibm.ws.webcontainer.util.EventListeners@17a3bf79
+      _filterInvocationListeners = class com.ibm.ws.webcontainer.util.EventListeners@426c1e82
+      _filterListeners = class com.ibm.ws.webcontainer.util.EventListeners@42d15da
+      _filterErrorListeners = class com.ibm.ws.webcontainer.util.EventListeners@360552c6
+    event = null
+    unavailableMessage = null
+    unavailableUntil = -1
+    isSTM = false
+    internalServlet = false
+    webAppInvocationCollaborators = null
+    platformHelper = class com.ibm.ws.webcontainer.PlatformHelper@378013ef
+    webAppNameSpaceCollab = class com.ibm.ws.webcontainer.osgi.collaborator.WebAppNameSpaceCollaboratorImpl@3aea1362
+      cmdai = class com.ibm.ws.threadContext.ComponentMetaDataAccessorImpl@6e5d1182
+    txCollab = class com.ibm.ws.webcontainer.collaborator.WebAppTransactionCollaborator@49a5f1a9
+      logger = class com.ibm.ws.logging.internal.WsLogger@3c577b08
+      CLASS_NAME = "com.ibm.ws.webcontainer.collaborator.WebAppTransactionCollaborator"
+    connCollab = class com.ibm.ws.webcontainer.collaborator.ConnectionHandleCollaborator@73645027
+      tc = class com.ibm.websphere.ras.TraceComponent@60fb2e0f
+      threadContext = class com.ibm.ws.threadContext.ThreadContextImpl@37159eee
+    suppressServletExceptionLogging = false
+    throwExceptionEnum = class java.util.RegularEnumSet@444c3acf
+      serialVersionUID = "/* Could not access serialVersionUID */"
+      elements = "/* Could not access elements */"
+      serialPersistentFields = "/* Could not access serialPersistentFields */"
+      elementType = "/* Could not access elementType */"
+      universe = "/* Could not access universe */"
+      MAX_ARRAY_SIZE = "/* Could not access MAX_ARRAY_SIZE */"
+    discernUnavailableServlet = false
+    reInitServletonInitUnavailableException = true
+    destroyServletonServiceUnavailableException = false
+    servlet23 = true
+    PARAMS_HEAD_TRACE = class java.lang.Class[2]
+      Class[0] = class java.lang.Class@5cfb3135
+      Class[1] = class java.lang.Class@19de1032
+    defaultHeadMethodInUse = false
+    defaultTraceMethodInUse = false
+    checkedForDefaultMethods = null
+    defaultTraceRequestBehavior = false
+    defaultHeadRequestBehavior = false
+    useOriginalRequestState = false
+    warningStatusSet = false
+    LSTRING_FILE = "javax.servlet.LocalStrings"
+    lStrings = class java.util.PropertyResourceBundle@4819d4fd
+      encoding = "/* Could not access encoding */"
+      lookup = "/* Could not access lookup */"
+      INITIAL_CACHE_SIZE = "/* Could not access INITIAL_CACHE_SIZE */"
+      NONEXISTENT_BUNDLE = "/* Could not access NONEXISTENT_BUNDLE */"
+      cacheList = "/* Could not access cacheList */"
+      referenceQueue = "/* Could not access referenceQueue */"
+      parent = "/* Could not access parent */"
+      locale = "/* Could not access locale */"
+      name = "/* Could not access name */"
+      expired = "/* Could not access expired */"
+      cacheKey = "/* Could not access cacheKey */"
+      keySet = "/* Could not access keySet */"
+      UNKNOWN_FORMAT = "/* Could not access UNKNOWN_FORMAT */"
+      TRACE_ON = "/* Could not access TRACE_ON */"
+      $assertionsDisabled = "/* Could not access $assertionsDisabled */"
+    config = null
+
